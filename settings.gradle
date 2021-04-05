@@ -1,0 +1,4 @@
+include ':data'
+include ':core'
+include ':app'
+rootProject.name = "Naski"

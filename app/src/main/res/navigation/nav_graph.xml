@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/birthday_list_screen">
+
+    <fragment
+        android:id="@+id/birthday_list_screen"
+        android:name="io.github.hughnatt.naski.app.birthday.list.BirthdayListFragment"
+        android:label="BirthdayListScreen">
+
+        <action
+            android:id="@+id/action_birthday_list_to_edit_birthday"
+            app:destination="@id/edit_birthday_screen" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_birthday_screen"
+        android:name="io.github.hughnatt.naski.app.birthday.edit.EditBirthdayFragment"
+        android:label="EditBirthdayFragment" >
+
+        <action
+            android:id="@+id/action_edit_birthday_to_birthday_list"
+            app:destination="@id/birthday_list_screen" />
+        <action
+            android:id="@+id/action_edit_birthday_to_date_picker_dialog"
+            app:destination="@id/date_picker_dialog" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/date_picker_dialog"
+        android:name="io.github.hughnatt.naski.app.common.datepicker.DatePickerFragment"
+        android:label="DatePickerFragment" />
+
+</navigation>
